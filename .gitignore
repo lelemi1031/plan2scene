@@ -15,3 +15,10 @@ conf/plan2scene/seam_correct.json
 conf/plan2scene/render.json
 *.backup
 outputs
+r2v2plan2scene_output
+
+.DS_Store
+.idea/
+venv/
+test/
+custom_data

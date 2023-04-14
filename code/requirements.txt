@@ -1,11 +1,17 @@
-torch
-torchvision
-numpy
-pandas
-pyyaml
-orderedattrdict
+torch~=2.0.0
+torchvision~=0.15.1
+numpy~=1.24.2
+pandas~=2.0.0
+scipy~=1.10.0
+pyyaml~=6.0
+orderedattrdict~=1.6.0
 kornia==0.2.0
-shapely # Used by place_object_cad_models script
 tensorboard
-git+https://github.com/sbrisard/moisan2011.git@master # Used by the freq metric
-pytorch-fid==0.1.1
+setuptools~=60.2.0
+# git+https://github.com/sbrisard/moisan2011.git@master # Used by the freq metric
+# pytorch-fid==0.1.1
+
+# Used by place_object_cad_models script
+shapely~=2.0.1
+Pillow~=9.5.0
+

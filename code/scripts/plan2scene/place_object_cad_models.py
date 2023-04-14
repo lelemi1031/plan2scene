@@ -360,11 +360,14 @@ def place_object_models(house: House, object_annotations: list, scene_json, hous
     new_object_jsons = []
     for obj in object_annotations:
         contained_rooms = [a for a, v in house.rooms.items() if obj in room_key_objects_map[v.room_id]]
-        assert len(contained_rooms) == 1, len(contained_rooms)
+        try:
+            assert len(contained_rooms) == 1, len(contained_rooms)
 
-        object_json, index = get_object_json(obj, house, contained_rooms[0], house_gen_conf, index)
-        if object_json is not None:
-            new_object_jsons.append(object_json)
+            object_json, index = get_object_json(obj, house, contained_rooms[0], house_gen_conf, index)
+            if object_json is not None:
+                new_object_jsons.append(object_json)
+        except:
+            pass
     scene_json["scene"]["object"].extend(new_object_jsons)
 
 

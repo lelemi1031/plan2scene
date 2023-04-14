@@ -92,7 +92,7 @@ def get_transform(x: float, y: float, z: float, angle: float, scale_x: float = 1
     from scipy.spatial.transform import Rotation as R
     scale_mat = np.array([[scale_x, 0, 0, 0], [0, 1, 0, 0], [0, 0, scale_z, 0], [0, 0, 0, 1]], dtype=float)
     r = R.from_rotvec((0, angle / 180 * np.pi, 0))
-    m = r.as_dcm()
+    m = r.as_matrix()
     m = np.vstack([m, [x, y, z]])
     m = np.hstack([m, np.transpose(np.array([[0, 0, 0, 1]]))])
     m = np.matmul(scale_mat, m)
